@@ -1,0 +1,43 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    transform 0.1s;
+  @include font-inter(500, clamp(10px, 2vw, $font-s), 24px, $white);
+  @include sizes(91px, 40px);
+
+  // Add here another styles if you need it
+  &--primary {
+    background-color: $light-blue;
+    border: 1px solid $blue-border;
+
+    &:hover {
+      background-color: $blue;
+    }
+
+    &:active {
+      background-color: $dark-blue;
+    }
+  }
+
+  &--disabled {
+    background-color: $disabled;
+    color: $grey;
+    cursor: not-allowed;
+    border: 1px solid $disabled-border;
+
+    &:hover,
+    &:active {
+      background-color: $disabled;
+    }
+  }
+}

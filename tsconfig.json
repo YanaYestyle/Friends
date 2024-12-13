@@ -13,9 +13,8 @@
     "lib": ["dom", "esnext"],
     "strict": true,
     "sourceMap": true,
-    //"target": "es5",
     "noImplicitAny": true,
-    "types": ["@testing-library/jest-dom", "@testing-library/react"],
+    "types": ["@testing-library/jest-dom", "@testing-library/react", "node"],
     "rootDir": "./src",
     "baseUrl": ".",
     "paths": {

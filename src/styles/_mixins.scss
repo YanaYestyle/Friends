@@ -1,0 +1,59 @@
+@use 'variables' as *;
+
+@mixin font-inter($weight: 500, $size: $font-s, $line-height: 24px, $color: $black) {
+  font-family: 'Inter', sans-serif;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin frame($max-width, $max-height, $padding) {
+  width: 100%;
+  max-width: $max-width;
+  max-height: $max-height;
+  padding: $padding;
+
+  @media (max-width: $breakpoint-md) {
+    max-width: calc($max-width * 0.9);
+    max-height: calc($max-height * 0.9);
+    padding: calc($padding * 0.8);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    max-width: calc($max-width * 0.8);
+    max-height: calc($max-height * 0.8);
+    padding: calc($padding * 0.7);
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    max-width: calc($max-width * 0.7);
+    max-height: calc($max-height * 0.7);
+    padding: calc($padding * 0.6);
+  }
+}
+
+@mixin sizes($max-width, $max-height) {
+  //width: 100%;
+  max-width: $max-width;
+  max-height: $max-height;
+
+  @media (max-width: $breakpoint-md) {
+    max-width: calc($max-width * 0.9);
+    max-height: calc($max-height * 0.9);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    max-width: calc($max-width * 0.8);
+    max-height: calc($max-height * 0.8);
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    max-width: calc($max-width * 0.7);
+    max-height: calc($max-height * 0.7);
+  }
+}
+
+@mixin box-shadow($x: 0px, $y: 10px, $blur: 20px, $spread: 0px, $color: rgba(204, 208, 223, 0.5)) {
+  box-shadow: $x $y $blur $spread $color;
+}

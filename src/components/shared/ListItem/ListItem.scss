@@ -1,0 +1,30 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.list-item-wrapper {
+  background-color: $white;
+  border-radius: 8px;
+  display: flex;
+  gap: 15px;
+  margin: 10px 0;
+  @include box-shadow();
+  @include frame(634px, 88px, 10px);
+
+  .image-container {
+    @include sizes(60px, 60px);
+  }
+
+  .list-item-content-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    .content {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
+}

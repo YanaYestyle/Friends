@@ -1,0 +1,31 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+body {
+  @include font-inter();
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-wrapper {
+  max-width: 100vw;
+  height: 100vh;
+  background: $disabled;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(55, 62, 90, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}

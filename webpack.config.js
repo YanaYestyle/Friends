@@ -12,7 +12,7 @@ module.exports = {
     clean: true,
   },
   devServer: {
-    //historyApiFallback: true,
+    historyApiFallback: true,
     open: true,
     host: 'localhost',
     port: 3000,

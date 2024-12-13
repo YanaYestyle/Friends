@@ -27,13 +27,5 @@ export default [
         ...globals.browser,
       },
     },
-    rules: {
-      'no-undef': 'warn',
-      'no-var': 'error',
-      '@typescript-eslint/no-unused-vars': 'warn',
-      'react/jsx-uses-react': 'error',
-      'react/jsx-uses-vars': 'error',
-      '@typescript-eslint/no-non-null-assertion': 'off',
-    },
   },
 ];

@@ -1,0 +1,23 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.friends-page-container {
+  background: rgba($white, 50%);
+  border-radius: 8px;
+  padding: 20px 0px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  width: 714px;
+  height: 634px;
+  @include sizes(714px, 634px);
+
+  .title {
+    padding: 10px 0 40px;
+    @include font-inter(700, clamp(16px, 2vw, 26px), 24px, $light-grey);
+  }
+}
+
+.friends-page-list-wrapper {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,25 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.modal-wrapper {
+  background-color: $white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include font-inter(500, clamp(10px, 2vw, $font-s), 24px, $white);
+  @include sizes(300px, 200px);
+
+  h3 {
+    text-transform: uppercase;
+    @include font-inter(700, clamp(16px, 2vw, 26px), 24px, $light-grey);
+  }
+
+  p {
+    margin: 0 0 30px 0;
+    @include font-inter(500, clamp(10px, 2vw, $font-s), 24px, $black);
+  }
+}

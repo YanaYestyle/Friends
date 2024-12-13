@@ -1,0 +1,19 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.bordered-text-wrapper {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  padding: 0px 8px;
+  border-radius: 20px;
+  border: 1px solid $light-grey;
+  @include sizes(196px, 24px);
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include font-inter(500, clamp(8px, 2vw, $font-xxs), 24px, $light-grey);
+  }
+}
