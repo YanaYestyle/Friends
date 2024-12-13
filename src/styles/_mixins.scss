@@ -9,48 +9,46 @@
 }
 
 @mixin frame($max-width, $max-height, $padding) {
-  width: 100%;
   max-width: $max-width;
   max-height: $max-height;
   padding: $padding;
 
   @media (max-width: $breakpoint-md) {
-    max-width: calc($max-width * 0.9);
-    max-height: calc($max-height * 0.9);
-    padding: calc($padding * 0.8);
-  }
-
-  @media (max-width: $breakpoint-sm) {
     max-width: calc($max-width * 0.8);
     max-height: calc($max-height * 0.8);
     padding: calc($padding * 0.7);
   }
 
-  @media (max-width: $breakpoint-xs) {
+  @media (max-width: $breakpoint-sm) {
     max-width: calc($max-width * 0.7);
     max-height: calc($max-height * 0.7);
     padding: calc($padding * 0.6);
   }
+
+  @media (max-width: $breakpoint-xs) {
+    max-width: calc($max-width * 0.5);
+    max-height: calc($max-height * 0.5);
+    padding: calc($padding * 0.4);
+  }
 }
 
 @mixin sizes($max-width, $max-height) {
-  //width: 100%;
   max-width: $max-width;
   max-height: $max-height;
 
   @media (max-width: $breakpoint-md) {
-    max-width: calc($max-width * 0.9);
-    max-height: calc($max-height * 0.9);
-  }
-
-  @media (max-width: $breakpoint-sm) {
     max-width: calc($max-width * 0.8);
     max-height: calc($max-height * 0.8);
   }
 
-  @media (max-width: $breakpoint-xs) {
+  @media (max-width: $breakpoint-sm) {
     max-width: calc($max-width * 0.7);
     max-height: calc($max-height * 0.7);
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    max-width: calc($max-width * 0.5);
+    max-height: calc($max-height * 0.5);
   }
 }
 

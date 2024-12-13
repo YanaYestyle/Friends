@@ -1,0 +1,30 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.navs-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.navs-header {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.nav-button {
+  padding: 8px 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include font-inter(500, clamp(10px, 2vw, $font-s), 24px, $dark-grey);
+  @include sizes(65px, 32px);
+}
+
+.nav-button.active {
+  border-bottom: 2px solid $black;
+  @include font-inter(500, clamp(10px, 2vw, $font-s), 24px, $black);
+}

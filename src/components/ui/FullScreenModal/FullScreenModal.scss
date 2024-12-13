@@ -1,0 +1,25 @@
+.full-screen-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.full-screen-container-close-button {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.full-screen-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(-50%);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

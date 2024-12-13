@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './styles/global.scss';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
-import { ErrorProvider } from './utils/ErrorContext';
-import { LoaderProvider } from './utils/LoaderContext';
+import { ErrorProvider } from './utils/ErrorContext/ErrorContext';
+import { LoaderProvider } from './utils/LoaderContext/LoaderContext';
 import { router } from './router';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);

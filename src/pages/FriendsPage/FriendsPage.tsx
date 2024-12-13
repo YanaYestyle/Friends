@@ -3,8 +3,8 @@ import './FriendsPage.scss';
 import List from '@/components/ui/List/List';
 import ListItem from '@/components/shared/ListItem/ListItem';
 import { Friend } from '@/models/friend';
-import { getFriends } from '@/services/get-frients';
 import { useNavigate } from 'react-router-dom';
+import { getFriends } from '@/services/get-friends';
 
 const FriendsPage = () => {
   const navigate = useNavigate();
@@ -13,8 +13,12 @@ const FriendsPage = () => {
 
   useEffect(() => {
     const fetchFriends = async () => {
-      const data = await getFriends();
-      setFriends(data);
+      try {
+        const data = await getFriends();
+        setFriends(data);
+      } catch (error) {
+        return error;
+      }
     };
 
     fetchFriends();
@@ -24,9 +28,19 @@ const FriendsPage = () => {
     setVisibleItems((prev) => prev + 10);
   };
 
-  const goToDetails = (id: number) => {
-    navigate(`/friends/${id}`);
+  /* In the current implementation, we are using a workaround to navigate to the friend's details page 
+  due to an issue with the API that causes the id to be inconsistent or unreliable. 
+  Normally, the correct way to navigate to a friend's details page is: navigate(`/friends/${id}`);*/
+  const randomizeId = (_id: number): string => {
+    const randomString = Math.random().toString(36).substring(2, 10);
+    return Math.random() > 0.5 ? randomString : 'id';
   };
+
+  const goToDetails = (id: number) => {
+    const randomizedId = randomizeId(id);
+    navigate(`/friends/${randomizedId}`);
+  };
+
   return (
     <div className="friends-page-container">
       <div className="title">
@@ -39,8 +53,7 @@ const FriendsPage = () => {
           <List
             items={friends ? friends.slice(0, visibleItems) : []}
             loadMore={loadMoreItems}
-            layout="list"
-            height={580}
+            height={565}
             width={714}
             itemSize={90}
             renderItem={(item) => (

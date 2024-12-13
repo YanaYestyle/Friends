@@ -1,0 +1,91 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.friend-details-page-container-wrapper {
+  display: flex;
+  gap: 50px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.friend-details-page-container {
+  background: rgba($white, 50%);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  min-width: 450px;
+  @include sizes(608px, 904px);
+}
+
+.friend-details-page-wrapper {
+  padding: 60px;
+  box-sizing: border-box;
+  @include sizes(488px, 784px);
+
+  .friend-details-page-header-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    @include sizes(180px, 238px);
+
+    .friend-details-page-image-container {
+      @include sizes(150px, 150px);
+    }
+
+    .friend-details-page-header-content {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      @include font-inter(700, clamp(16px, 2vw, 26px), 31.5px, $black);
+    }
+  }
+
+  .friend-details-page-navs-content-wrapper {
+    background: $white;
+    box-sizing: border-box;
+    @include box-shadow();
+
+    .friend-details-page-info {
+      padding: 10px;
+
+      .divider {
+        border-top: 2px solid rgba($light-grey, 50%);
+        margin: 16px 0;
+      }
+    }
+
+    .friend-details-page-grid-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      span:nth-of-type(n) {
+        @include font-inter(500, clamp(10px, 2vw, $font-s), 24px, $light-grey);
+      }
+
+      span:nth-of-type(2n) {
+        @include font-inter(400, clamp(10px, 2vw, $font-s), 24px, $black);
+      }
+
+      &.bio {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    .friend-details-page-grid-photos {
+      border-radius: 4px;
+      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      @include sizes(488px, 488px);
+
+      img {
+        cursor: pointer;
+        @include sizes(136px, 136px);
+      }
+    }
+  }
+}

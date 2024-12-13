@@ -20,4 +20,5 @@
 .friends-page-list-wrapper {
   display: flex;
   justify-content: center;
+  @include sizes(714px, 565px);
 }

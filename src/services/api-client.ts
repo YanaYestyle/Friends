@@ -1,7 +1,6 @@
 import axios, { AxiosError } from "axios";
-import { useContext } from "react";
-import { ErrorContext } from "@/utils/ErrorContext";
-import { getShowLoader, getHideLoader } from "@/utils/LoaderContext";
+import { getShowError } from "@/utils/ErrorContext/ErrorContext";
+import { getShowLoader, getHideLoader } from "@/utils/LoaderContext/LoaderContext";
 
 const apiClient = axios.create({
     baseURL: process.env.API_URL,
@@ -31,13 +30,10 @@ apiClient.interceptors.response.use(
     },
     (error: AxiosError) => {
         const hideLoader = getHideLoader();
-        const errorContext = useContext(ErrorContext);
+        const showError = getShowError();
 
         if (hideLoader) hideLoader();
-
-        if (errorContext && error) {
-            errorContext.showError(error.message || "An unexpected error occurred.");
-        }
+        if (showError) showError(error.message || 'An unexpected error occurred.');
 
         return Promise.reject(error);
     }

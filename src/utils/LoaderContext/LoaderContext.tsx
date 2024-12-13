@@ -1,5 +1,5 @@
-import Loader from '@/components/ui/Loader/Loader';
-import React, { createContext, useContext, useState } from 'react';
+import Loader from '../../components/ui/Loader/Loader';
+import React, { createContext, useState } from 'react';
 
 type LoaderContextType = {
   loading: boolean;

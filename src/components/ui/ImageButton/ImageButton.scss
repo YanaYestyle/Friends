@@ -1,0 +1,27 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.image-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 44px;
+  width: 44px;
+  border: none;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    transform 0.1s;
+  @include sizes(44px, 44px);
+
+  // Add here another styles if you need it
+  &--primary {
+    background-color: $white;
+  }
+
+  &--secondary {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
